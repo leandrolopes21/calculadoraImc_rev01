@@ -11,28 +11,7 @@
 </head>
 <body>
     <h1>Calcular IMC</h1>
-    <h3>IMC = peso / altura²</h3>
-
-    <div class="bloco">
-
-        <label for="altura">Digite sua altura (M)</label> <br>
-        <input type="number" id="altura"> <br>
-
-        <label for="peso">Digite seu peso (Kg)</label> <br>
-        <input type="number" id="peso"> <br>
-
-        <input type="submit" value="Calcular IMC" class="calc">
-
-        <!-- <button onclick="calcularImc()">Calcular IMC</button> -->
-
-        <!-- <button onclick="limpar()">Limpar</button> -->
-
-        <div class="valores">
-            <p class="result" id="result"></p>
-            <p class="info" id="info"></p>
-        </div>
-
-    </div>
+    <h3>IMC = peso / altura²</h3>    
 
     <div id="conteiner">
         <table>
@@ -67,6 +46,27 @@
                 <td>III</td>
             </tr>
         </table>
+    </div>
+
+    <div class="bloco">
+
+        <label for="altura">Digite sua altura (M)</label> <br>
+        <input type="number" id="altura"> <br>
+
+        <label for="peso">Digite seu peso (Kg)</label> <br>
+        <input type="number" id="peso"> <br>
+
+        <input type="submit" value="Calcular IMC" class="calc">
+
+        <!-- <button onclick="calcularImc()">Calcular IMC</button> -->
+
+        <!-- <button onclick="limpar()">Limpar</button> -->
+
+        <div class="valores">
+            <p class="result" id="result"></p>
+            <p class="info" id="info"></p>
+        </div>
+
     </div>
 </body>
 
@@ -135,8 +135,6 @@
         peso.disabled = true; // Desabilita o campo peso
         calc.disabled = true;
 
-        /* var body = document.getElementById("reset"); */
-
         botaoReset = document.createElement("button"); // Cria um botão
 
         botaoReset.textContent = "Reset"; // Insere o nome "Novo" ao botão
@@ -147,12 +145,12 @@
 
     function limpar() {
 
-        var reiniciarTabela = document.querySelectorAll(".conteiner td");
+        /*var reiniciarTabela = document.querySelectorAll(".conteiner td");
         for (var i = 0; i < reiniciarTabela.length; i++) {
               reiniciarTabela[i].textContent = "";
-            }
+            } */
 
-        botaoReset.parentNode.removeChild(botaoReset);
+        botaoReset.parentNode.removeChild(botaoReset); // Remove o botão de reset, criado anteriormente
 
         document.getElementById('result').innerHTML = ""; // Limpa o valor gerado pelo resultado
         document.getElementById('info').innerHTML = ""; // Limpa o valor gerado pelo resultado
@@ -162,6 +160,12 @@
         peso.value = ""; // Limpa o valor digitado pelo usuário
         altura.value = ""; // Limpa o valor digitado pelo usuário
         altura.focus();
+
+        document.getElementById('magreza').style.backgroundColor = ""; // Limpa a cor inserida no campo magreza da tabela
+        document.getElementById('normal').style.backgroundColor = ""; // Limpa a cor inserida no campo magreza da tabela
+        document.getElementById('sobrepeso').style.backgroundColor = ""; // Limpa a cor inserida no campo magreza da tabela
+        document.getElementById('obesidade').style.backgroundColor = ""; // Limpa a cor inserida no campo magreza da tabela
+        document.getElementById('obesidadegr').style.backgroundColor = ""; // Limpa a cor inserida no campo magreza da tabela
     }
 
 </script>
